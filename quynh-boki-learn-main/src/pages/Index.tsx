@@ -4,11 +4,11 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import Layout from '@/components/layout/Layout';
-import { 
-  BookOpen, 
-  Award, 
-  Users, 
-  CheckCircle, 
+import {
+  BookOpen,
+  Award,
+  Users,
+  CheckCircle,
   ArrowRight,
   Play,
   FileText,
@@ -21,6 +21,7 @@ import {
   Send
 } from 'lucide-react';
 import { allCourses, formatCurrency } from '@/data/courses';
+import AwardsSection from '@/components/home/AwardsSection';
 
 const Index = () => {
   const features = [
@@ -85,25 +86,25 @@ const Index = () => {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 gradient-subtle" />
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-5" />
-        
+
         <div className="container relative py-20 md:py-32">
           <div className="max-w-3xl mx-auto text-center animate-fade-up">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium mb-6">
               <BookOpen className="h-4 w-4" />
               Đào tạo Kế toán Nissho Boki
             </div>
-            
+
             <h1 className="font-display text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
               Chinh phục{' '}
               <span className="text-primary">Nissho Boki</span>{' '}
               cùng Quỳnh BOKI
             </h1>
-            
+
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Khóa học kế toán theo chuẩn Nhật Bản, từ cơ bản đến nâng cao. 
+              Khóa học kế toán theo chuẩn Nhật Bản, từ cơ bản đến nâng cao.
               Luyện thi Level 3 với đề mô phỏng thực tế, cam kết đậu 95%.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button variant="hero" size="xl" asChild>
                 <Link to="/courses">
@@ -126,8 +127,8 @@ const Index = () => {
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div 
-                key={stat.label} 
+              <div
+                key={stat.label}
                 className="text-center animate-fade-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
@@ -151,7 +152,7 @@ const Index = () => {
               Tại sao chọn Quỳnh BOKI?
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Chúng tôi cung cấp chương trình đào tạo toàn diện, được thiết kế bởi 
+              Chúng tôi cung cấp chương trình đào tạo toàn diện, được thiết kế bởi
               chuyên gia kế toán có kinh nghiệm làm việc tại Nhật Bản.
             </p>
           </div>
@@ -192,7 +193,7 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {featuredCourses.map((course, index) => (
-              <Card 
+              <Card
                 key={course.id}
                 className="group overflow-hidden hover:shadow-card transition-all duration-300 animate-fade-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
@@ -210,15 +211,15 @@ const Index = () => {
                       <span className="text-xs">4.9</span>
                     </div>
                   </div>
-                  
+
                   <h3 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                     {course.title}
                   </h3>
-                  
+
                   <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
                     {course.description}
                   </p>
-                  
+
                   <div className="flex items-center gap-4 text-xs text-muted-foreground mb-4">
                     <span className="flex items-center gap-1">
                       <Play className="h-3 w-3" />
@@ -229,7 +230,7 @@ const Index = () => {
                       {course.duration}
                     </span>
                   </div>
-                  
+
                   <div className="flex items-center justify-between">
                     <span className="text-lg font-bold text-primary">
                       {formatCurrency(course.price)}
@@ -256,6 +257,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Awards Section */}
+      <AwardsSection />
+
       {/* CTA */}
       <section className="py-20 gradient-hero">
         <div className="container">
@@ -264,12 +268,12 @@ const Index = () => {
               Sẵn sàng bắt đầu hành trình?
             </h2>
             <p className="text-primary-foreground/80 mb-8 text-lg">
-              Đăng ký ngay hôm nay để nhận ưu đãi đặc biệt và bắt đầu 
+              Đăng ký ngay hôm nay để nhận ưu đãi đặc biệt và bắt đầu
               chinh phục chứng chỉ Nissho Boki!
             </p>
-            <Button 
-              size="xl" 
-              variant="secondary" 
+            <Button
+              size="xl"
+              variant="secondary"
               className="bg-background text-foreground hover:bg-background/90"
               asChild
             >
@@ -296,7 +300,7 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {blogPosts.map((post, index) => (
-              <Card 
+              <Card
                 key={post.title}
                 className="group overflow-hidden hover:shadow-card transition-all duration-300 animate-fade-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
@@ -311,15 +315,15 @@ const Index = () => {
                     </span>
                     <span className="text-xs text-muted-foreground">{post.readTime}</span>
                   </div>
-                  
+
                   <h3 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">
                     {post.title}
                   </h3>
-                  
+
                   <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
                     {post.excerpt}
                   </p>
-                  
+
                   <div className="flex items-center justify-between">
                     <span className="text-xs text-muted-foreground">{post.date}</span>
                     <Button size="sm" variant="ghost" asChild>
@@ -351,7 +355,7 @@ const Index = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-card border border-border rounded-3xl p-8 md:p-12 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 gradient-hero opacity-10 rounded-full blur-3xl" />
-              
+
               <div className="flex items-start gap-4 mb-6">
                 <div className="h-14 w-14 rounded-full gradient-hero flex items-center justify-center text-primary-foreground font-bold text-xl">
                   NA
@@ -363,8 +367,8 @@ const Index = () => {
               </div>
 
               <blockquote className="text-lg md:text-xl text-foreground mb-6 leading-relaxed">
-                "Trước khi học tại Quỳnh BOKI, mình không biết gì về kế toán Nhật. 
-                Sau 2 tháng học, mình đã tự tin thi đậu Level 3 với điểm cao. 
+                "Trước khi học tại Quỳnh BOKI, mình không biết gì về kế toán Nhật.
+                Sau 2 tháng học, mình đã tự tin thi đậu Level 3 với điểm cao.
                 Cảm ơn cô Quỳnh và đội ngũ giảng viên!"
               </blockquote>
 
@@ -457,24 +461,24 @@ const Index = () => {
                     <Input type="email" placeholder="Nhập email" />
                   </div>
                 </div>
-                
+
                 <div>
                   <label className="text-sm font-medium text-foreground mb-2 block">
                     Số điện thoại
                   </label>
                   <Input placeholder="Nhập số điện thoại" />
                 </div>
-                
+
                 <div>
                   <label className="text-sm font-medium text-foreground mb-2 block">
                     Nội dung
                   </label>
-                  <Textarea 
-                    placeholder="Nhập nội dung tin nhắn..." 
+                  <Textarea
+                    placeholder="Nhập nội dung tin nhắn..."
                     rows={4}
                   />
                 </div>
-                
+
                 <Button type="submit" className="w-full" variant="hero">
                   Gửi tin nhắn
                   <Send className="h-4 w-4 ml-2" />
