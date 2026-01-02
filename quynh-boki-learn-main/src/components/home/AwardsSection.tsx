@@ -14,19 +14,19 @@ const awards = [
         title: "Nền tảng giáo dục tốt nhất 2024",
         description: "Được bình chọn bởi Hiệp hội EdTech Việt Nam",
         icon: Award,
-        image: "c:/Users/ADMIN/.gemini/antigravity/brain/0bf6fe54-611b-4f95-8b97-726a1d9996ec/award_certificate_1_1767331893579.png",
+        image: "/images/award_1.png",
     },
     {
         title: "Chất lượng giảng dạy xuất sắc",
         description: "Giải thưởng uy tín công nhận phương pháp dạy hiệu quả",
         icon: Star,
-        image: "c:/Users/ADMIN/.gemini/antigravity/brain/0bf6fe54-611b-4f95-8b97-726a1d9996ec/award_certificate_2_1767331908023.png",
+        image: "/images/award_2.png",
     },
     {
         title: "Top 10 Startup EdTech",
         description: "Vinh danh những đóng góp đổi mới sáng tạo trong giáo dục",
         icon: Trophy,
-        image: "c:/Users/ADMIN/.gemini/antigravity/brain/0bf6fe54-611b-4f95-8b97-726a1d9996ec/award_certificate_3_1767331923984.png",
+        image: "/images/award_3.png",
     },
 ];
 
