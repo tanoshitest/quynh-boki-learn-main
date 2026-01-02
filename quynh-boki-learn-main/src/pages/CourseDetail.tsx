@@ -1,5 +1,12 @@
-git config--global user.email "tanomorivietnam@gmail.com"
-git config--global user.name "THANH NGUYEN"
+import { useState } from 'react';
+import { useParams, Navigate, Link } from 'react-router-dom';
+import { useAuth } from '@/contexts/AuthContext';
+import { allCourses, courseCategories, formatCurrency } from '@/data/courses';
+import Layout from '@/components/layout/Layout';
+import { BookOpen, Clock, Award, Users, Star, Unlock, Lock, CheckCircle, ShoppingCart } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import PaymentModal from '@/components/payment/PaymentModal';
+import LessonList from '@/components/course/LessonList';
 
 const CourseDetail = () => {
   const { courseId } = useParams();
